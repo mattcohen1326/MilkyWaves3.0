@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom/BrowserRouter';
+import { HashRouter } from 'react-router-dom';
 import Home from './home.js';
 
 ReactDOM.render((
-  <BrowserRouter>
+  <HashRouter>
 	<App /> {/* The various pages will be displayed by the `Main` component. */}
-  </BrowserRouter>
+  </HashRouter>
   ), document.getElementById('root')
 );
 
