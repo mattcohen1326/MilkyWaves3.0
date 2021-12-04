@@ -18,7 +18,7 @@ import TESTING from "./TESTING.js";
 const Main = () => {
   return (
 	
-    <Routes> {/* The Switch decides which component to show based on the current URL.*/}
+    <Routes basename='/demo-app'> {/* The Switch decides which component to show based on the current URL.*/}
 	  <Route exact path = '/Playlists' element={<Playlists />}> </Route>
 	  <Route exact path = '/Nav' element={<Nav />}> </Route>
       <Route exact path = '/StartPage' element={<StartPage />}></Route>
