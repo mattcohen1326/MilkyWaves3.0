@@ -1,25 +1,53 @@
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Test from "./Test.js";
+import Test2 from "./Test2.js"
+import StartPage from "./StartPage.js";
+import Home from "./home.js";
+import Nav from "./Nav.js";
+import { useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router';
+import Playlists from "./Playlists.js";
+import Articles from "./Articles.js";
+import AOTW from "./aotw.js";
+import NewHome from "./NewHome.js";
+import TESTING from "./TESTING.js";
+const Main = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	
+    <Routes> {/* The Switch decides which component to show based on the current URL.*/}
+	  <Route exact path = '/Playlists' element={<Playlists />}> </Route>
+	  <Route exact path = '/Nav' element={<Nav />}> </Route>
+      <Route exact path = '/StartPage' element={<StartPage />}></Route>
+	  <Route exact path = '/' element={<Home />}></Route>
+      <Route exact path='/Test' element={<Test />}></Route>
+	  <Route exact path='/Home' element={<Home />}></Route>
+      <Route exact path = "/Articles" element={<Articles />}></Route>
+	  <Route exact path = "/AOTW" element = {<AOTW />}></Route>
+      <Route exact path = "/NewHome" element = {<NewHome />}></Route>
+	  <Route exact path = "/TESTING" element = {<TESTING />}></Route>
+    </Routes>
   );
+}
+
+class App extends React.Component{
+  constructor(props){
+	  super(props);
+	  this.state = {starting:false};
+  }
+
+  render(){
+  return (
+	<>
+		<Main />
+	</>
+	
+	
+  );
+  }
 }
 
 export default App;

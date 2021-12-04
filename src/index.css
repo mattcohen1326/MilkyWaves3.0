@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+span
+	{
+	width:100vw;
+	height:100vh;
+	margin:0px;
+    background-attachment:fixed;
+	display:grid;
+	grid-template-columns: 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% ;
+	grid-template-rows: 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% ;
+	height:100vh;
+	width:100vw;
+	animation:bodyfade 3s linear;
+	animation-iteration-count:1;
+	animation-fill-mode:forwards;
+	animation-play-state:paused;
+}
