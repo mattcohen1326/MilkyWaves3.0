@@ -1,5 +1,5 @@
 {
-	"homepage": "https://mattcohen1326.github.io/demo-app",
+  "homepage": "https://mattcohen1326.github.io/demo-app",
   "name": "demo-app",
   "version": "0.1.0",
   "private": true,
@@ -7,14 +7,17 @@
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "iframe": "^1.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-iframe": "^1.8.0",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-	"predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
