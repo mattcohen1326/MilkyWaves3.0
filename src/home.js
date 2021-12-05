@@ -7,7 +7,7 @@ import album from "./media/album.png";
 import genres from "./media/genres.png";
 import concert from "./media/concert.png";
 import note from "./media/note.png";
-
+import potw from "./media/potw.png";
 function Title(props){
 	return(
 		<div id={props.id}>
@@ -75,9 +75,9 @@ class Home extends React.Component{
 			  <Title id = "title"/>
 			  {!this.state.isClicked ? <Option status={false}/> : null}
 				  {this.state.isClicked ? <div className = "buttons">
-				  <Selection title = "Genres" image={genres} url="/StartPage" />
-				  <Selection title = "Music in Media" image="./media/potw.png" url="/StartPage" />
-				  <Selection title = "Live Music"image={concert} url="/TESTING" />
+				  <Selection title = "Genres" image={genres} url="/Playlists" />
+				  <Selection title = "Music in Media" image={potw} url="/Playlists" />
+				  <Selection title = "Live Music"image={concert} url="/Playlists" />
 				  <Selection title = "Playlists" image={note} url="/Playlists" />
 				  <Selection title = "AOTW"  image={album} url="/AOTW" />
 			  </div>:null}
