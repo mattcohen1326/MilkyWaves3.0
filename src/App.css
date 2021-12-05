@@ -123,6 +123,11 @@ body{
 #dash{
 	position:fixed;
 }
+#pStart{
+	width:100vw;
+	color:white;
+	text-align:center;
+}
 #play-pause{
 	width: 10vw;
     display: flex;
@@ -185,12 +190,17 @@ body{
     left: 35vw;
     background-color: black;
 }
-#blast-off{
+
+#choosing{
 	animation:spin 3s linear infinite;
 }
-#blast-off img{
-	width:5vw;
-	
+
+#choosing img{
+	width:15vw;
+}
+
+#not-choosing img{
+	width: 15vw;
 }
 
 #control-bar{
@@ -556,8 +566,10 @@ width:25vw;
   color: #89323B;
 }
 #alignment{
-	    display: flex;
+	  display: flex;
     align-items: center;
+    width: 70vw;
+    justify-content: space-evenly;
 }
 /* Arrow */
 #arrows{
@@ -676,15 +688,14 @@ width:25vw;
   -moz-transform:rotate(12deg);
   -ms-transform: rotate(12deg);
 }
-#chosen{
-	    background-color: rgba(89, 31, 206, 0.3);
-    font-size: 3vw;
-    margin: 2%;
-    padding: 3%;
-	width:30vw;
+#rec{
+	color:white;
+	width:100vw;
+	text-align:center;
 }
-#chosen iframe{
-	width:15vw;
+#chosen{
+}
+#chosen iframe{;
 }
 @keyframes fly-in{
 0%{width:5vw;}

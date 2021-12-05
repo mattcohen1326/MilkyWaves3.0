@@ -275,7 +275,12 @@ class Choices extends React.Component{
 		for(var i = 0; i < pLists.length;i++){
 			if(pLists[i].props.name == pname){
 				console.log(pLists[i].props);
-				return <PlaylistCategory  name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />;
+				return (
+				<>
+				<h2 id="rec" >RECOMMENDED PLAYLIST :</h2>
+				<PlaylistCategory id="chosen" name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />
+				</>
+				);
 				//return pLists[i];
 			}
 		}
@@ -317,8 +322,8 @@ class Choices extends React.Component{
 			</div>
 			</div>
 			
-			<div id = "blast-off">
-				<img src={logo} onClick={this.handleClick} />
+			<div id = "not-choosing">
+				<Logo logo={logo} click={this.handleClick} />
 			</div>
 			</div>
 			
@@ -362,8 +367,8 @@ class Choices extends React.Component{
 			</select>
 			</div>
 			</div>
-			<div id = "blast-off">
-				<img src={logo} onClick={this.handleClick} />
+			<div id = "choosing">
+				<Logo logo={logo} click={this.handleClick} />
 			</div>
 			
 			
@@ -377,13 +382,25 @@ class Choices extends React.Component{
 		}
 	}
 }
+
+class Logo extends React.Component{
+	constructor(props){
+		super(props);
+	}
+	render(){
+		return(
+			<img id={this.props.id} src={this.props.logo} onClick={this.props.click} />
+		);
+	}
+}
 function Playlists(){
 	return(
 	<>
 		<Nav />
 		<Choices />
+		<h1 id="pStart">Browse All Playlists:</h1>
 		{pLists}
-		<Skim />
+		<Skim message="CLICK THE WHEEL TO TURN ON THE RECOMMENDING ALGORITHM OR TURN IT OFF AND BROWSE ALL PLAYLISTS"/>
 	</>
 	);
 }

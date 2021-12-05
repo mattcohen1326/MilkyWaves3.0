@@ -11,7 +11,7 @@ class Skim extends React.Component{
 				<div id = "skim">
 				<img id = "skim-pic" src={skim} />
 				<div className = "speech-bubble">
-					GET A PLAYLIST SUGGESTION BASED ON YOUR INPUT OR SCROLL DOWN TO BROWSE ALL OF OUR PLAYLISTS.
+					{this.props.message};
 				</div>
 				</div>
 			</>
