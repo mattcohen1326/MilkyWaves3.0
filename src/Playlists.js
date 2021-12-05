@@ -400,7 +400,7 @@ function Playlists(){
 		<Choices />
 		<h1 id="pStart">Browse All Playlists:</h1>
 		{pLists}
-		<Skim message="okokokok"/>
+		<Skim message="SKIMCITY"/>
 	</>
 	);
 }
