@@ -703,7 +703,7 @@ width:25vw;
 }
 @keyframes appear-after{
 0%{opacity:0;}
-100%{opacity:1;}
+100%{opacity:100%;}
 }
 @keyframes spin{
 0%{transform:rotate(0deg);}
