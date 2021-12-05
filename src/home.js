@@ -70,7 +70,7 @@ class Home extends React.Component{
 	//Genres, Music in Media, Live Music, Playlists, Home
 	render(){
 		return(
-			<span autoFocus id = "homepage" tabIndex = {-1} onKeyPress={this.handleClick}>
+			<span autoFocus id = "homepage" tabIndex = {-1} onTouchStart={this.handleClick} onKeyPress={this.handleClick}>
 			  <Title id="og"/>
 			  <Title id = "title"/>
 			  {!this.state.isClicked ? <Option status={false}/> : null}
