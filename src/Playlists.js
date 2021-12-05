@@ -400,7 +400,7 @@ function Playlists(){
 		<Choices />
 		<h1 id="pStart">Browse All Playlists:</h1>
 		{pLists}
-		<Skim message="CLICK THE WHEEL TO TURN ON THE RECOMMENDING ALGORITHM OR TURN IT OFF AND BROWSE ALL PLAYLISTS"/>
+		<Skim message="TITS"/>
 	</>
 	);
 }
