@@ -70,13 +70,13 @@ class Home extends React.Component{
 	//Genres, Music in Media, Live Music, Playlists, Home
 	render(){
 		return(
-			<span autoFocus id = "homepage" tabIndex = {-1} onTouchStart={this.handleClick} onKeyPress={this.handleClick}>
+			<span autoFocus id = "homepage" tabIndex = {-1}  onKeyPress={this.handleClick}>
 			  <Title id="og"/>
 			  <Title id = "title"/>
 			  {!this.state.isClicked ? <Option status={false}/> : null}
 				  {this.state.isClicked ? <div className = "buttons">
 				  <Selection title = "Genres" image={genres} url="/Playlists" />
-				  <Selection title = "Music in Media" image={potw} url="/Playlists" />
+				  <Selection title = "Music in Media" image={potw} url="/SpaceHome" />
 				  <Selection title = "Live Music"image={concert} url="/Playlists" />
 				  <Selection title = "Playlists" image={note} url="/Playlists" />
 				  <Selection title = "AOTW"  image={album} url="/AOTW" />

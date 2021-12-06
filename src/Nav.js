@@ -34,7 +34,7 @@ function Nav(){
 			<NavItem name="Home" navigation="/Home"/>
 			<NavItem name="Playlists" navigation = "/Playlists"/>
 			<NavItem name="Genre" navigation = "/Genre"/>
-			<NavItem name="Music In Media" navigation = "/Playlists"/>
+			<NavItem name="Music In Media" navigation = "/SpaceHome"/>
 			<NavItem name="Live Music" navigation = "/Playlists"/>
 		
 		</div>

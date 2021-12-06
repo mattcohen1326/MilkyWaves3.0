@@ -15,6 +15,8 @@ import Articles from "./Articles.js";
 import AOTW from "./aotw.js";
 import NewHome from "./NewHome.js";
 import TESTING from "./TESTING.js";
+import SpaceHome from "./SpaceHome.js";
+import SpaceWarp from "./space.js";
 const Main = () => {
   return (
 	
@@ -29,6 +31,8 @@ const Main = () => {
 	  <Route exact path = "/AOTW" element = {<AOTW />}></Route>
       <Route exact path = "/NewHome" element = {<NewHome />}></Route>
 	  <Route exact path = "/TESTING" element = {<TESTING />}></Route>
+	  <Route exact path = "/SpaceWarp" element = {<SpaceWarp />}></Route>
+	  <Route exact path = "/SpaceHome" element = {<SpaceHome />}></Route>
     </Routes>
   );
 }
