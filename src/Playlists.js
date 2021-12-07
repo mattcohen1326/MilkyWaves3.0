@@ -7,8 +7,13 @@ import Iframe from 'react-iframe';
 import raw from './playlists/playlists.js';
 import Skim from './Skim.js';
 import logo from './media/logo.png';
+import spot from './playlists/spotify.js';
+import spotlogo from './media/spotify.png';
+import applelogo from './media/apple.png';
 var COLOR = 0;
 var colors = ["rgb(12, 156, 238, .3)","rgb(61,189,194, .3)","rgb(89, 31, 206,.3)","rgb(112, 128, 144,.3)"];
+var ptype = "apple";
+
 
 function pickNextColor(){
 	var temp = "";
@@ -165,8 +170,18 @@ function createPlaylists(){
 	  return playlistHelper(songs);
   });
 }
+class AppleSpotify extends React.Component{
+	constructor(props){
+		super(props);
+	}
+	
+	render(){
+		return(
+			<img id={this.props.id} src={this.props.logo} onClick={this.props.click} />
+		);
+	}
+}
 
-var pLists = playlistHelper(raw);
 
 class Choices extends React.Component{
 	constructor(props){
@@ -328,6 +343,7 @@ class Choices extends React.Component{
 			</div>
 			
 			
+			
 		</div>
 		);
 		}
@@ -371,9 +387,9 @@ class Choices extends React.Component{
 				<Logo logo={logo} click={this.handleClick} />
 			</div>
 			
-			
-			
 			</div>
+			
+			
 			
 		</div>
 				{this.choosePlaylist()};
@@ -382,6 +398,7 @@ class Choices extends React.Component{
 		}
 	}
 }
+
 
 class Logo extends React.Component{
 	constructor(props){
@@ -393,13 +410,61 @@ class Logo extends React.Component{
 		);
 	}
 }
+class List extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {type:"apple"};
+		this.handleApple = this.handleApple.bind(this);
+		this.handleSpot = this.handleSpot.bind(this);
+	}
+	
+	handleApple(){
+		console.log("fuq");
+		this.setState({type:"apple"});
+		COLOR=0;
+	}
+	
+	handleSpot(){
+		console.log("fuq");
+		this.setState({type:"spot"});
+		COLOR=0;
+	}
+	render(){
+		
+		if(this.state.type == "apple"){
+			return(
+				<>
+				<div id = "apple-spotify">
+					<AppleSpotify logo ={applelogo} click={this.handleApple} />
+					<AppleSpotify logo ={spotlogo} click={this.handleSpot} />
+				</div>
+				{playlistHelper(raw)}
+				</>
+				
+			);
+		}
+		else{
+			return(
+				<>
+				<div id = "apple-spotify">
+					<AppleSpotify logo ={applelogo} click={this.handleApple} />
+					<AppleSpotify logo = {spotlogo} click={this.handleSpot} />
+				</div>
+				{playlistHelper(spot)}
+				</>
+			)
+		}
+	}
+}
+var pLists = (ptype == "apple") ? playlistHelper(raw) : playlistHelper(spot);
 function Playlists(){
 	return(
 	<>
 		<Nav />
 		<Choices />
+		
 		<h1 id="pStart">Browse All Playlists:</h1>
-		{pLists}
+		<List />
 		<Skim message=" THE WHEEL TO GET A SUGGESTED PLAYLIST.  WHILE THE WHEEL IS SPINNING YOUR RECOMMENDATION WILL APPEAR BELOW"/>
 	</>
 	);

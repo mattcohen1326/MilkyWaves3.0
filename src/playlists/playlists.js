@@ -3,7 +3,8 @@ https://embed.music.apple.com/us/playlist/back-to-jerzeee/pl.u-WabZZdRiypr06x,Ba
 https://embed.music.apple.com/us/playlist/ch%C3%ADll/pl.182408adb858449198c9819f7d69073a,Chill,2,1,1,
 https://embed.music.apple.com/us/playlist/chill-2-0/pl.6c00369428624901bd247cf8d796bbc2,Chill 2,5,4,8,
 https://embed.music.apple.com/us/playlist/chill-3-0/pl.u-8aAVVZetW7PMxD,Chill 3,3,6,2,
-https://embed.music.apple.com/us/playlist/chill-4-0/pl.u-NpXmm2asNj1rRk,Chill 4,2,7,4,`
+https://embed.music.apple.com/us/playlist/chill-4-0/pl.u-NpXmm2asNj1rRk,Chill 4,2,7,4,
+https://open.spotify.com/embed/playlist/4MajpmHAtKoB7u0Gpv8nto?utm_source=generator,Milky Waves,3,5,6,1`
 
 export default text;
 
