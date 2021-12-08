@@ -125,6 +125,7 @@ body{
 	position:fixed;
 }
 #pStart{
+	margin-top:10vh;
 	width:100vw;
 	color:white;
 	text-align:center;
@@ -693,6 +694,7 @@ width:25vw;
 	color:white;
 	width:100vw;
 	text-align:center;
+	margin-top:10vh;
 }
 #chosen{
 }
@@ -822,11 +824,12 @@ width:25vw;
     position: fixed;
     bottom: -5vh;
     /* height: 25vh; */
-    width: 98vw;
+    width: 90vw;
     align-items: baseline;
     text-align: center;
     justify-content: space-evenly;
     transform: scale(.7);
+	margin-left:5vw;
 }
 #controls img{
 		z-index:3;
@@ -843,13 +846,13 @@ width:25vw;
     margin-top: 3vw;
 }
 #cp_music:hover{
-	height:11vw;
+	transform:scale(1.2);
 }
 #cp_radar{
 	height:5vw;
 }
 #cd_drums:hover{
-	height:12vw;
+	transform:scale(1.2);
 }
 
 #panel{
@@ -886,7 +889,8 @@ html {
  }
 }
 #space-content{
-	    position: fixed;
+	position: fixed;
+	color:wheat;
     top: 10vh;
     width: 60vw;
     height: 64vh;
@@ -964,6 +968,10 @@ html {
 
 #apple-spotify img{
 	width:5vw;
+}
+
+#apple-spotify img:hover{
+	transform:scale(1.2);
 }
 
 @keyframes float {

@@ -188,7 +188,8 @@ class Choices extends React.Component{
 		super(props);
 		this.state = {mood:"angry",
 					weather:"rainy",
-					activity:"chilling"};
+					activity:"chilling",
+					ptype:"apple"};
 		this.handleChange = this.handleChange.bind(this);
 		this.choosePlaylist = this.choosePlaylist.bind(this);
 		this.convertMood = this.convertMood.bind(this);
@@ -199,6 +200,7 @@ class Choices extends React.Component{
 	}
 	handleClick(e){
 		this.setState({chosen:!this.state.chosen});
+		this.setState({ptype:(ptype == "apple") ? "spot" : "apple"});
 	}
 	handleChange(e) {
 		if(e.target.id === "moods"){
@@ -274,13 +276,12 @@ class Choices extends React.Component{
 	choosePlaylist(e){
 		var hash = new Object();
 		var pLists = [];
-		if(ptype == "apple"){
+		if(this.state.ptype == "apple"){
 			pLists = playlistHelper(raw);
 		}
 		else{
 			pLists = playlistHelper(spot);
 		}
-		console.log(pLists[0]);
 		for(var i = 0; i < pLists.length; i++){
 			hash[pLists[i].props.name] = this.distance(pLists[i]);
 		}
@@ -297,12 +298,12 @@ class Choices extends React.Component{
 		for(var i = 0; i < pLists.length;i++){
 			if(pLists[i].props.name == pname){
 				console.log(pLists[i].props);
-				return (
-				<>
-				<h2 id="rec" >RECOMMENDED PLAYLIST :</h2>
-				<PlaylistCategory id="chosen" name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />
-				</>
-				);
+				return i;
+				//<>
+				//<h2 id="rec">RECOMMENDED PLAYLIST :</h2>
+				//<PlaylistCategory id="chosen" name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />
+				//</>
+				//);
 				//return pLists[i];
 			}
 		}
@@ -310,6 +311,7 @@ class Choices extends React.Component{
 	render(){
 		if(!this.state.chosen){
 		return(
+		<>
 		<div id = "playlist-choices">
 			<h1>Playlist Picker</h1>
 		<div id = "alignment">
@@ -352,6 +354,8 @@ class Choices extends React.Component{
 			
 			
 		</div>
+		<List />
+		</>
 		);
 		}
 		else{
@@ -399,7 +403,8 @@ class Choices extends React.Component{
 			
 			
 		</div>
-				{this.choosePlaylist()};
+				<List choice={this.choosePlaylist()} />
+				
 			</>
 			);
 		}
@@ -426,7 +431,6 @@ class List extends React.Component{
 	}
 	
 	handleApple(){
-		console.log("fuq");
 		this.setState({type:"apple"});
 		COLOR=0;
 		ptype = "apple";
@@ -439,40 +443,50 @@ class List extends React.Component{
 		ptype = "spot";
 	}
 	render(){
-		
 		if(this.state.type == "apple"){
-			return(
-				<>
-				<div id = "apple-spotify">
-					<AppleSpotify logo ={applelogo} click={this.handleApple} />
-					<AppleSpotify logo ={spotlogo} click={this.handleSpot} />
-				</div>
-				{playlistHelper(raw)}
-				</>
-				
-			);
+			var final_playlists = playlistHelper(raw);
 		}
 		else{
-			return(
-				<>
-				<div id = "apple-spotify">
-					<AppleSpotify logo ={applelogo} click={this.handleApple} />
-					<AppleSpotify logo = {spotlogo} click={this.handleSpot} />
-				</div>
-				{playlistHelper(spot)}
-				</>
-			)
+			var final_playlists = playlistHelper(spot);
 		}
+		var title = (
+			<h1 id="pStart">Browse All Playlists:</h1>
+		);
+		final_playlists.unshift(title);
+		if(this.props.choice != null){
+			//<PlaylistCategory id="chosen" name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />
+				
+			var c = (
+				<>
+				<h2 id="rec">RECOMMENDED PLAYLIST :</h2>
+				<PlaylistCategory id="chosen" name = {final_playlists[this.props.choice].props.name} mood={final_playlists[this.props.choice].props.mood} weather={final_playlists[this.props.choice].props.weather} activity={final_playlists[this.props.choice].props.activity} color={final_playlists[this.props.choice].props.color} size={final_playlists[this.props.choice].props.size} url={final_playlists[this.props.choice].props.url} desc ="" />
+				</>
+				);
+					
+			
+			
+			final_playlists.unshift(c);
+		}
+		return(
+			<>
+			<div id = "apple-spotify">
+				<AppleSpotify logo ={applelogo} click={this.handleApple} />
+				<AppleSpotify logo ={spotlogo} click={this.handleSpot} />
+			</div>
+			{final_playlists}
+			</>
+			
+		);
 	}
 }
+
 function Playlists(){
 	return(
 	<>
 		<Nav />
-		<Choices />
+		<Choices ptype = "apple"/>
 		
-		<h1 id="pStart">Browse All Playlists:</h1>
-		<List />
+		
 		<Skim message=" THE WHEEL TO GET A SUGGESTED PLAYLIST.  WHILE THE WHEEL IS SPINNING YOUR RECOMMENDATION WILL APPEAR BELOW"/>
 	</>
 	);
