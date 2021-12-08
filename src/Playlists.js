@@ -294,7 +294,7 @@ class Choices extends React.Component{
 			}
 		}
 		
-			console.log(pLists);
+			console.log(pname);
 		for(var i = 0; i < pLists.length;i++){
 			if(pLists[i].props.name == pname){
 				console.log(pLists[i].props);
@@ -455,11 +455,11 @@ class List extends React.Component{
 		final_playlists.unshift(title);
 		if(this.props.choice != null){
 			//<PlaylistCategory id="chosen" name = {pLists[i].props.name} mood={pLists[i].props.mood} weather={pLists[i].props.weather} activity={pLists[i].props.activity} color={pLists[i].props.color} size={pLists[i].props.size} url={pLists[i].props.url} desc ="" />
-				
+			console.log(this.props.choice);
 			var c = (
 				<>
 				<h2 id="rec">RECOMMENDED PLAYLIST :</h2>
-				<PlaylistCategory id="chosen" name = {final_playlists[this.props.choice].props.name} mood={final_playlists[this.props.choice].props.mood} weather={final_playlists[this.props.choice].props.weather} activity={final_playlists[this.props.choice].props.activity} color={final_playlists[this.props.choice].props.color} size={final_playlists[this.props.choice].props.size} url={final_playlists[this.props.choice].props.url} desc ="" />
+				<PlaylistCategory id="chosen" name={final_playlists[this.props.choice+1].props.name} mood={final_playlists[this.props.choice+1].props.mood} weather={final_playlists[this.props.choice+1].props.weather} activity={final_playlists[this.props.choice+1].props.activity} color={final_playlists[this.props.choice+1].props.color} size={final_playlists[this.props.choice+1].props.size} url={final_playlists[this.props.choice+1].props.url} desc ="" />
 				</>
 				);
 					
