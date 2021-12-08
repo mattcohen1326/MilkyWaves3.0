@@ -899,7 +899,7 @@ html {
 	overflow-y:scroll;
 	animation:appear-after;
 	animation-duration:2s;
-	animation-timing-function:linear;
+	animation-timing-function:ease-in;
 	animation-delay:8s;
 	animation-fill-mode:forwards;
 	opacity:0;
