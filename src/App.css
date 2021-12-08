@@ -700,7 +700,7 @@ width:25vw;
 }
 
 .attempt{
-	background: url('./media/space.png');
+	background: url('./media/backtest.png');
   background-size: cover;
   background-position:center;
   width:100vw;
@@ -708,7 +708,7 @@ width:25vw;
 }
 .wall{
   
-  background: url('./media/space.png');
+  background: url('./media/backtest.png');
   background-size:cover;
 }
 
@@ -778,7 +778,7 @@ width:25vw;
   transform: rotateX(180deg) translateZ(500px);
 }
 #spacehome{
-	background: url('./media/space.png');
+	background: url('./media/backtest.png');
   background-size: cover;
   background-position:center;
   width:100vw;
@@ -851,12 +851,13 @@ width:25vw;
 #cd_drums:hover{
 	height:12vw;
 }
+
 #panel{
 	background-image: url(./media/panel.png);
     background-size: cover;
     background-position: bottom;
     width: 100vw;
-    height: 40vh;
+    height: 49vh;
     top: 61vh;
     position: fixed;
 }

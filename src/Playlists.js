@@ -273,6 +273,13 @@ class Choices extends React.Component{
 	}
 	choosePlaylist(e){
 		var hash = new Object();
+		var pLists = [];
+		if(ptype == "apple"){
+			pLists = playlistHelper(raw);
+		}
+		else{
+			pLists = playlistHelper(spot);
+		}
 		console.log(pLists[0]);
 		for(var i = 0; i < pLists.length; i++){
 			hash[pLists[i].props.name] = this.distance(pLists[i]);
@@ -422,12 +429,14 @@ class List extends React.Component{
 		console.log("fuq");
 		this.setState({type:"apple"});
 		COLOR=0;
+		ptype = "apple";
 	}
 	
 	handleSpot(){
 		console.log("fuq");
 		this.setState({type:"spot"});
 		COLOR=0;
+		ptype = "spot";
 	}
 	render(){
 		
@@ -456,7 +465,6 @@ class List extends React.Component{
 		}
 	}
 }
-var pLists = (ptype == "apple") ? playlistHelper(raw) : playlistHelper(spot);
 function Playlists(){
 	return(
 	<>
