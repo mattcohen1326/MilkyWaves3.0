@@ -31,7 +31,7 @@ class NavItem extends React.Component{
 function Nav(){
 	return(
 		<div className = "nav">
-			<NavItem name="Home" navigation="/Home"/>
+			<NavItem name="Home" navigation="/StartPage"/>
 			<NavItem name="Playlists" navigation = "/Playlists"/>
 			<NavItem name="Genre" navigation = "/Genre"/>
 			<NavItem name="Music In Media" navigation = "/SpaceHome"/>

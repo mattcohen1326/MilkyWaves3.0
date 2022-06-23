@@ -12,6 +12,7 @@ import {TwitterTimelineEmbed} from 'react-twitter-embed';
 import articleImages from "./articles/articleGenerator.js"
 import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 import Nav from "./Nav.js"
+import MediaQuery from 'react-responsive'
 
 var colorCount = 0
 var colors = ["rgb(12, 156, 238, .3)","rgb(61,189,194, .3)","rgb(89, 31, 206,.3)","rgb(112, 128, 144,.3)"];
@@ -60,6 +61,7 @@ function StartPage() {
 	document.querySelector('body').style.overflowY = 'hidden'
 	return(
 		<>
+		<MediaQuery minWidth={1224}>
 		    <Nav />
 			<div id = "HomeBody">
 				<div id = "Timeline">
@@ -80,8 +82,14 @@ function StartPage() {
 					/>
 				</div>
 			</div>
+		</MediaQuery>
+		<MediaQuery maxWidth={1223}>
+		<Nav />
+			<div id = "Articles">
+					{articleOutput}
+				</div>
+		</MediaQuery>
 		</>
-		
 	);
 	
 }

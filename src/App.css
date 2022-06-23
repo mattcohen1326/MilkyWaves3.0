@@ -85,6 +85,16 @@ body{
 
 }
 
+@media screen and (max-width: 1223px) {
+  #Articles {
+      width: 100vw !important;
+      justify-content: center;
+  }
+  .Article{
+    width:75% !important;
+  }
+}
+
 #Timeline{
   margin-top:5vh;
 }

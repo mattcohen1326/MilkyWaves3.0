@@ -71,7 +71,7 @@ class Home extends React.Component{
 	render(){
 		if(!this.state.isClicked){
 			return (
-				<span autoFocus id = "homepage" tabIndex = {-1}  onKeyPress={this.handleClick}>
+				<span autoFocus id = "homepage" tabIndex = {-1} onTouchStart={this.handleClick} onKeyPress={this.handleClick}>
 				  <Title id="og"/>
 				  <Title id = "title"/>
 				  <Option />
