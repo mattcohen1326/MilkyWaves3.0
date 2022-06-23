@@ -481,6 +481,7 @@ class List extends React.Component{
 }
 
 function Playlists(){
+	document.querySelector('body').style.overflowY = "scroll"
 	return(
 	<>
 		<Nav />

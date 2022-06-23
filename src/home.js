@@ -69,6 +69,95 @@ class Home extends React.Component{
 	}
 	//Genres, Music in Media, Live Music, Playlists, Home
 	render(){
+		if(!this.state.isClicked){
+			return (
+				<span autoFocus id = "homepage" tabIndex = {-1}  onKeyPress={this.handleClick}>
+				  <Title id="og"/>
+				  <Title id = "title"/>
+				  <Option />
+				</span>
+			)
+		} else {
+			return (
+				<StartPage />
+			)
+		}
+	}
+		
+	
+  
+}
+
+
+
+
+
+
+
+
+
+
+/*function Title(props){
+	return(
+		<div id={props.id}>
+			<h1>MILKY</h1>
+			<h1>WAVES</h1>
+		</div>
+	);
+}
+
+class Selection extends React.Component{
+	constructor(props){
+		super(props);
+		this.handleHover = this.handleHover.bind(this);
+		this.state = {isHovered:false};
+	}
+	
+	handleHover(){
+		this.setState(prevState => ({
+      isHovered: !prevState.isHovered
+	  
+    }));
+		console.log(this.state.isHovered);
+	}
+	render(){
+		return(
+			<Link  onMouseEnter={this.handleHover} onMouseLeave={this.handleHover} to = {this.props.url}>
+				<img src = {this.props.image} />
+				<h1 id="button-title">{this.props.title}</h1>
+				<style>{'#button-title { color:white; font-size:.5vw; width:3vw;}'}</style>
+				
+			</Link>
+		);
+	}
+}
+class Option extends React.Component{
+	render(){
+		return(
+			
+				<div id = {"start"}>
+					<h2>Press Any Key To Continue</h2>
+				</div>
+			);
+		}
+	}
+class Home extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {isClicked:false};
+		this.handleClick = this.handleClick.bind(this);
+	}
+	
+	handleClick(){
+		console.log("ok")
+		this.setState(prevState => ({
+      isClicked: !prevState.isClicked
+	  
+    }));
+	
+	}
+	//Genres, Music in Media, Live Music, Playlists, Home
+	render(){
 		return(
 			<span autoFocus id = "homepage" tabIndex = {-1}  onKeyPress={this.handleClick}>
 			  <Title id="og"/>
@@ -82,11 +171,15 @@ class Home extends React.Component{
 				  <Selection title = "AOTW"  image={album} url="/AOTW" />
 			  </div>:null}
 			</span>
+			
 		);
 	}
+	
+	
+}*/
+	
+	
 		
 	
-  
-}
 
 export default Home;
