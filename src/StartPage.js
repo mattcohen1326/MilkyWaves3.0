@@ -8,6 +8,7 @@ import genres from "./media/genres.png";
 import concert from "./media/concert.png";
 import note from "./media/note.png";
 import potw from "./media/potw.png";
+import Logo from "./media/logo.png"
 import {TwitterTimelineEmbed} from 'react-twitter-embed';
 import articleImages from "./articles/articleGenerator.js"
 import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
@@ -44,7 +45,45 @@ class Article extends React.Component{
 		);
 	} 
 }
-
+class MenuButton extends React.Component{
+	constructor(props){
+		super(props)
+		this.state = {clicked:false}
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick(){
+		this.setState(prevState => ({
+			clicked: !prevState.clicked
+		}))
+	}
+	render(){
+		if(this.state.clicked){
+			return(
+				<>
+					<div id = "MenuOptions">
+						<div id = "menuButtonX"  onTouchStart={this.handleClick}></div>
+						<img src = {Logo} />
+					</div>
+					<Nav />
+				</>
+			)
+		} else {
+			const articleOutput = generateArticles()
+			return (
+				<>
+					<div id ="MenuOptions">
+					<div id = "menuButtonOpen"  onTouchStart={this.handleClick}></div>
+					<img src = {Logo} />
+					</div>
+					
+					<div id = "Articles">
+						{articleOutput}
+					</div>
+				</>
+			)
+		}
+	}
+}
 function generateArticles(){
 	const articles = require("./articles/articles.json")
 	var finalArticles =  []
@@ -84,10 +123,7 @@ function StartPage() {
 			</div>
 		</MediaQuery>
 		<MediaQuery maxWidth={1223}>
-		<Nav />
-			<div id = "Articles">
-					{articleOutput}
-				</div>
+			<MenuButton/>
 		</MediaQuery>
 		</>
 	);

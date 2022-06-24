@@ -93,6 +93,31 @@ body{
   .Article{
     width:75% !important;
   }
+  .nav{
+    height: 80vh !important;
+    flex-wrap: wrap;
+    width: 80vw !important;
+  }
+  .nav-item{
+    font-size: 8vw !important;
+    width: 70vw !important;
+  }
+
+  #MenuOptions {
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 5vh;
+  }
+  #MenuOptions img{
+    width:10vw;
+  }
+  #menuButtonOpen, #menuButtonX{
+    width:5vw;
+    height:5vw;
+    background-color: white;
+  }
 }
 
 #Timeline{
