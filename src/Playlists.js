@@ -10,6 +10,9 @@ import logo from './media/logo.png';
 import spot from './playlists/spotify.js';
 import spotlogo from './media/spotify.png';
 import applelogo from './media/apple.png';
+import MediaQuery from 'react-responsive'
+import MenuButton from './MenuButton';
+
 var COLOR = 0;
 var colors = ["rgb(12, 156, 238, .3)","rgb(61,189,194, .3)","rgb(89, 31, 206,.3)","rgb(112, 128, 144,.3)"];
 var ptype = "apple";
@@ -484,11 +487,20 @@ function Playlists(){
 	document.querySelector('body').style.overflowY = "scroll"
 	return(
 	<>
+	<MediaQuery minWidth={1223}>
 		<Nav />
-		<Choices ptype = "apple"/>
-		
-		
-		<Skim message=" THE WHEEL TO GET A SUGGESTED PLAYLIST.  WHILE THE WHEEL IS SPINNING YOUR RECOMMENDATION WILL APPEAR BELOW"/>
+			<Choices ptype = "apple"/>
+			<Skim message=" THE WHEEL TO GET A SUGGESTED PLAYLIST.  WHILE THE WHEEL IS SPINNING YOUR RECOMMENDATION WILL APPEAR BELOW"/>
+			</MediaQuery>
+		<MediaQuery maxWidth={1223}>
+			<MenuButton content={(
+				<>
+			<Choices ptype = "apple"/>
+			<Skim message=" THE WHEEL TO GET A SUGGESTED PLAYLIST.  WHILE THE WHEEL IS SPINNING YOUR RECOMMENDATION WILL APPEAR BELOW"/>
+				</>
+			)} />
+		</MediaQuery>
+
 	</>
 	);
 }
