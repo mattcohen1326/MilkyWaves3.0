@@ -21,7 +21,7 @@ const Main = () => {
       <Route exact path = '/StartPage' element={<StartPage />}></Route>
 	  <Route exact path = '/' element={<Home />}></Route>
 	  <Route exact path='/Home' element={<Home />}></Route>
-	  <Route exact path = "/AOTW" element = {<AOTW />}></Route>
+	  <Route exact path = "/AOTW" element = {<AOTW homepage={false}/>}></Route>
 	  <Route exact path = "/SpaceWarp" element = {<SpaceWarp />}></Route>
 	  <Route exact path = "/SpaceHome" element = {<SpaceHome />}></Route>
     </Routes>

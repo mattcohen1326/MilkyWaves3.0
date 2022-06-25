@@ -16,6 +16,7 @@ import generateArticles from './generateArticles';
 import Nav from "./Nav.js"
 import MediaQuery from 'react-responsive'
 import MenuButton from './MenuButton.js'
+import AOTW  from './aotw';
 
 
 function StartPage() {
@@ -37,12 +38,8 @@ function StartPage() {
 					{articleOutput}
 					<div className = "Article"></div>
 				</div>
-				<div id = "Timeline">
-					<TwitterTimelineEmbed
-					sourceType="profile"
-					screenName="milkywavesmusic"
-					options={{height: 400}}
-					/>
+				<div id = "HomeAOTW">
+					<AOTW homepage={true}/>
 				</div>
 			</div>
 		</MediaQuery>

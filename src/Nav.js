@@ -33,9 +33,8 @@ function Nav(){
 		<div className = "nav">
 			<NavItem name="Home" navigation="/StartPage"/>
 			<NavItem name="Playlists" navigation = "/Playlists"/>
-			<NavItem name="Genre" navigation = "/Genre"/>
-			<NavItem name="Music In Media" navigation = "/SpaceHome"/>
-			<NavItem name="Live Music" navigation = "/Playlists"/>
+			<NavItem name="GRBTTG" navigation = "/Genre"/>
+			<NavItem name="Album of the Week" navigation = "/AOTW"/>
 		
 		</div>
 	);
