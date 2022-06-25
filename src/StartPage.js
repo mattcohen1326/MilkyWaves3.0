@@ -35,6 +35,7 @@ function StartPage() {
 				</div>
 				<div id = "Articles">
 					{articleOutput}
+					<div className = "Article"></div>
 				</div>
 				<div id = "Timeline">
 					<TwitterTimelineEmbed
@@ -49,6 +50,7 @@ function StartPage() {
 			<MenuButton content={(
 				<div id = "Articles">
 				{generateArticles()}
+				<div className = "Article"></div>
 				</div>)} />
 		</MediaQuery>
 		</>

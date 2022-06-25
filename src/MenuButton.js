@@ -25,8 +25,10 @@ class MenuButton extends React.Component{
 					<div id = "MenuOptions">
 						<div id = "menuButtonX"  onTouchStart={this.handleClick}></div>
 						<img src = {Logo} />
+						<div id = "filler"></div>
 					</div>
 					<Nav />
+					
 				</>
 			)
 		} else {
@@ -34,8 +36,13 @@ class MenuButton extends React.Component{
 			return (
 				<>
 					<div id ="MenuOptions">
-					<div id = "menuButtonOpen"  onTouchStart={this.handleClick}></div>
+					<div id = "menuButtonOpen"  onTouchStart={this.handleClick}>
+                        <div class = "stripe"></div>
+                        <div class = "stripe"></div>
+                        <div class = "stripe"></div>    
+                    </div>
 					<img src = {Logo} />
+					<div id = "filler"></div>
 					</div>
 					{this.props.content}
 					

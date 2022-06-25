@@ -8,6 +8,7 @@ import genres from "./media/genres.png";
 import concert from "./media/concert.png";
 import note from "./media/note.png";
 import potw from "./media/potw.png";
+import SpaceWarp from './space';
 function Title(props){
 	return(
 		<div id={props.id}>
@@ -79,7 +80,7 @@ class Home extends React.Component{
 			)
 		} else {
 			return (
-				<StartPage />
+				<SpaceWarp />
 			)
 		}
 	}
