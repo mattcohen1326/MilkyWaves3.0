@@ -3,7 +3,6 @@ import Playlist from './Playlist.js';
 import Nav from './Nav.js';
 import MediaQuery from 'react-responsive';
 import MenuButton from './MenuButton.js';
-
 class Album extends React.Component{
 	constructor(props){
 		super(props);

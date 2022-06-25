@@ -37,9 +37,9 @@ class MenuButton extends React.Component{
 				<>
 					<div id ="MenuOptions">
 					<div id = "menuButtonOpen"  onTouchStart={this.handleClick}>
-                        <div class = "stripe"></div>
-                        <div class = "stripe"></div>
-                        <div class = "stripe"></div>    
+                        <div className = "stripe"></div>
+                        <div className = "stripe"></div>
+                        <div className = "stripe"></div>    
                     </div>
 					<img src = {Logo} />
 					<div id = "filler"></div>
