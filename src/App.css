@@ -76,7 +76,11 @@ body{
 	font-family: 'Righteous', cursive;
 	overflow-x:hidden;
 }	
-
+#backbutton{
+  height:5vw;
+  width:5vw;
+  color:white;
+}
 #HomeBody{
   width: 100vw;
   height:100vw;
@@ -84,7 +88,6 @@ body{
   justify-content: space-around;
 
 }
-
 @media screen and (max-width: 1223px) {
   #Articles {
       width: 100vw !important;
@@ -225,11 +228,14 @@ body{
 }
 .Article{
   width: 100%;
-  height: 30vh;
   margin-top:5vh;
 }
 .Article img{
   width:15%;
+  padding-bottom:5vh;
+}
+.ArticleLink{
+  width:100%;
 }
 #main-screen{
 	width:75vw;
@@ -573,6 +579,10 @@ a:visited{
     align-items: center;
     vertical-align: middle;
 
+}
+.ArticleFiller{
+  height: 10vh;
+  width: 30vw;
 }
 .album-homepage{
   width:10vw;

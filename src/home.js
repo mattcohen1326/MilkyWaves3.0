@@ -30,7 +30,6 @@ class Selection extends React.Component{
       isHovered: !prevState.isHovered
 	  
     }));
-		console.log(this.state.isHovered);
 	}
 	render(){
 		return(
@@ -61,11 +60,10 @@ class Home extends React.Component{
 	}
 	
 	handleClick(){
-		console.log("ok")
 		this.setState(prevState => ({
       isClicked: !prevState.isClicked
 	  
-    }));
+    }))
 	
 	}
 	//Genres, Music in Media, Live Music, Playlists, Home

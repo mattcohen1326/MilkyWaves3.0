@@ -3,28 +3,14 @@
 {
     "title":"First Post",
     "date":"June 6 2022",
-    "body":"test"
+    "body":"test",
+    "route":"/fp"
 },
 {
-    "title":"Second Post",
+    "title":"First Post",
     "date":"June 6 2022",
-    "body":"test"
-},
-{
-    "title":"Second Post",
-    "date":"June 6 2022",
-    "body":"test"
-},
-{
-    "title":"Second Post",
-    "date":"June 6 2022",
-    "body":"test"
-},
-{
-    "title":"Second Post",
-    "date":"June 6 2022",
-    "body":"test"
+    "body":"test",
+    "route":"/sp"
 }
 ]
 }
-

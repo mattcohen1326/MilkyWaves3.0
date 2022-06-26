@@ -2,6 +2,7 @@ import React from 'react';
 import Spaceship from './Spaceship.js';
 import Hologram from './Hologram.js';
 import StartPage from './StartPage.js'
+import { Navigate } from 'react-router-dom';
 class Desc extends React.Component{
 	constructor(props){
 		super(props);
@@ -23,27 +24,29 @@ class SpaceWarp extends React.Component{
 	render(){
 		return(
 		<>
-			<div class = "attempt">
-			<div class="scene">
-			  <div class="wrap">
-				  <div class="wall wall-right"></div>
-				  <div class="wall wall-left"></div>   
-				  <div class="wall wall-top"></div>
-				  <div class="wall wall-bottom"></div> 
-				  <div class="wall wall-back"></div>    
+			<div className = "attempt">
+			<div className="scene">
+			  <div className="wrap">
+				  <div className="wall wall-right"></div>
+				  <div className="wall wall-left"></div>   
+				  <div className="wall wall-top"></div>
+				  <div className="wall wall-bottom"></div> 
+				  <div className="wall wall-back"></div>    
 			  </div>
-			  <div class="wrap">
-				  <div class="wall wall-right"></div>
-				  <div class="wall wall-left"></div>   
-				  <div class="wall wall-top"></div>
-				  <div class="wall wall-bottom"></div>   
-				  <div class="wall wall-back"></div>    
+			  <div className="wrap">
+				  <div className="wall wall-right"></div>
+				  <div className="wall wall-left"></div>   
+				  <div className="wall wall-top"></div>
+				  <div className="wall wall-bottom"></div>   
+				  <div className="wall wall-back"></div>    
 			  </div>
 			</div>
 			</div>
-			
-			<StartPage />
-		</>
+			{setTimeout(() => {
+				window.history.pushState('page','page','/#/StartPage')
+				}, 5500)}
+			<StartPage />		
+			</>
 		
 		);
 	}

@@ -12,6 +12,20 @@ import Playlists from "./Playlists.js";
 import AOTW from "./aotw.js";
 import SpaceHome from "./SpaceHome.js";
 import SpaceWarp from "./space.js";
+import ArticleComponent from './ArticleComponent';
+import articles from './articles/articles.json'
+import articleImages from './articles/articleGenerator';
+
+function createArticleRoutes(){
+	var aroutes = []
+	const art = articles.articles
+	for(var i = 0; i < art.length; i++){
+		let article = art[i]
+		aroutes.push(<Route exact path = {article.route} element = {<ArticleComponent title={article.title} body={article.body} img={articleImages[i]} />} />)
+	}
+	return aroutes	
+}
+
 const Main = () => {
   return (
 	
@@ -23,7 +37,9 @@ const Main = () => {
 	  <Route exact path='/Home' element={<Home />}></Route>
 	  <Route exact path = "/AOTW" element = {<AOTW homepage={false}/>}></Route>
 	  <Route exact path = "/SpaceWarp" element = {<SpaceWarp />}></Route>
+	  <Route exact path = "/Article/:id" element = {<ArticleComponent />}></Route>
 	  <Route exact path = "/SpaceHome" element = {<SpaceHome />}></Route>
+	  {createArticleRoutes()}
     </Routes>
   );
 }

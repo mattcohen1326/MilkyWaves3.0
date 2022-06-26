@@ -1,7 +1,7 @@
 import './App.css';
 import './home.css';
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, withRouter, Navigate } from "react-router-dom";
 import { unmountComponentAtNode, render } from "react-dom";
 import album from "./media/album.png";
 import genres from "./media/genres.png";
@@ -17,8 +17,6 @@ import Nav from "./Nav.js"
 import MediaQuery from 'react-responsive'
 import MenuButton from './MenuButton.js'
 import AOTW  from './aotw';
-
-
 function StartPage() {
 	const articleOutput = generateArticles()
 	document.querySelector('body').style.overflowY = 'hidden'
@@ -46,9 +44,9 @@ function StartPage() {
 		<MediaQuery maxWidth={1223}>
 			<MenuButton content={(
 				<div id = "Articles">
-				{generateArticles()}
-				<div className = "Article"></div>
-				</div>)} />
+					{generateArticles()}
+				</div>	
+				)} />
 		</MediaQuery>
 		</>
 	);

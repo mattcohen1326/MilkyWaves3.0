@@ -6,6 +6,6 @@ import { BrowserRouter as Router, Switch, Route, Link, withRouter } from "react-
 import turtle from "../media/sotw.png"
 import test from "../media/aotw.png"
 
-const articleImages = [turtle,test,turtle,turtle,turtle]
+const articleImages = [turtle,test]
 
 export default articleImages
