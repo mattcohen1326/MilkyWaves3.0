@@ -213,12 +213,22 @@ body{
   width: 20vw !important;
   height: 80vh !important; width:25vw;
 }
+#ArticleComponent{
+  color:white;
+  height:60vh;
+}
 
+#ArticleComponent img{
+  width:10vw;
+}
 #Articles::-webkit-scrollbar { /* WebKit */
   width: 0;
   height: 0;
 }
-
+#Articles a:visited, a{
+  text-decoration: none;
+  color:inherit;
+}
 #Articles{
   display: flex;
   flex-wrap: wrap;

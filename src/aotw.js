@@ -15,15 +15,16 @@ class AOTW extends React.Component{
 		super(props)
 	}
 	componentDidMount() {
-
+		if(!this.props.homepage){
         this.removeCommentBox = commentBox('5668220384051200-proj', {
 			backgroundColor: '#000',
 			textColor: '#fff'
-		})
+		})}
 	}	
     componentWillUnmount() {
-
+		if(!this.props.homepage){
         this.removeCommentBox();
+		}
     }
 	render(){
 		return(
