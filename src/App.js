@@ -21,7 +21,7 @@ function createArticleRoutes(){
 	const art = articles.articles
 	for(var i = 0; i < art.length; i++){
 		let article = art[i]
-		aroutes.push(<Route exact path = {article.route} element = {<ArticleComponent title={article.title} body={article.body} img={articleImages[i]} />} />)
+		aroutes.push(<Route exact path = {article.route} element = {<ArticleComponent title={article.title} body={article.body} img={articleImages[i]} date={article.date} />} />)
 	}
 	return aroutes	
 }

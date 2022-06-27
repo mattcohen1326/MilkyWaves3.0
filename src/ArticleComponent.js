@@ -5,6 +5,9 @@ import currentArticle from './currentarticle.json'
 import StartPage from "./StartPage";
 import { unmountComponentAtNode, render } from "react-dom";
 import { BrowserRouter as Redirect, Router, Switch, Route, Link, withRouter } from "react-router-dom";
+import formatParagraph from "./formatParagraph";
+import Nav from "./Nav";
+import MenuButton from "./MenuButton";
 class ArticleComponent extends React.Component {
     constructor(props){
         super(props)
@@ -19,16 +22,29 @@ class ArticleComponent extends React.Component {
         this.removeCommentBox();
     }
     render(){
-        console.log(this.props.artilce)
+        document.querySelector('body').style.overflowY = "scroll"
         return(
             <>
-                <Link to ='/StartPage'><div id = "backbutton"></div></Link>
+                <MediaQuery minWidth={1224}>
+                <Nav />
                 <div id ="ArticleComponent">
                 <h1>{this.props.title}</h1>
-                <img src ={this.props.img} />
-                <p>{this.props.body}</p>
+                <h3>{this.props.date}</h3>
+                {formatParagraph(this.props.body)}
                 </div>
                 <div className="commentbox" />
+                </MediaQuery> 
+                <MediaQuery maxWidth={1223}>
+                <MenuButton content = {(
+                                    <>
+                                    <div id ="ArticleComponent">
+                                    <h1>{this.props.title}</h1>
+                                    <h3>{this.props.date}</h3>
+                                    {formatParagraph(this.props.body)}
+                                    </div>
+                                    <div className="commentbox" /></>
+                                        )}/>
+                </MediaQuery>
             </>
         )
     }

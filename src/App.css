@@ -204,6 +204,15 @@ body{
     width:90% !important ;
     height:70% !important;
   }
+  #ArticleComponent{
+    margin-top:10vh;
+  }
+  #ArticleComponent p{
+    width:100% !important;
+  }
+  #paragraphs{
+    width:80vw !important;
+  }
 }
 
 #Timeline{
@@ -215,11 +224,30 @@ body{
 }
 #ArticleComponent{
   color:white;
-  height:60vh;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
 }
-
+#ArticleComponent h1{
+  width:100vw;
+}
 #ArticleComponent img{
   width:10vw;
+}
+#paragraphs{
+  width: 50vw;
+  text-align:left;
+  display:flex;
+  flex-wrap:wrap;
+
+}
+
+#ArticleComponent h3{
+  width:100vw;
+}
+#ArticleComponent p{
+  width:50vw;
 }
 #Articles::-webkit-scrollbar { /* WebKit */
   width: 0;

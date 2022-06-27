@@ -46,7 +46,7 @@ function generateArticles(){
 	var finalArticles =  []
 	for(var i = 0; i < articles.articles.length; i++){
 		console.log(articles.articles[i].route)
-		var newArticle = <Article title={articles.articles[i].title} img={articleImages[i]} body={articles.articles[i].body} route={articles.articles[i].route} />
+		var newArticle = <Article title={articles.articles[i].title} img={articleImages[i]} body={articles.articles[i].body} route={articles.articles[i].route} date={articles.articles[i].date}/>
 		finalArticles.push(newArticle)
 	}
 	
