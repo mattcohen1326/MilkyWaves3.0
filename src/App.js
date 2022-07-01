@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { Navigate } from 'react-router';
 import Playlists from "./Playlists.js";
 import AOTW from "./aotw.js";
+import Rules from "./Rules.js"
 import SpaceHome from "./SpaceHome.js";
 import SpaceWarp from "./space.js";
 import ArticleComponent from './ArticleComponent';
@@ -37,8 +38,8 @@ const Main = () => {
 	  <Route exact path='/Home' element={<Home />}></Route>
 	  <Route exact path = "/AOTW" element = {<AOTW homepage={false}/>}></Route>
 	  <Route exact path = "/SpaceWarp" element = {<SpaceWarp />}></Route>
-	  <Route exact path = "/Article/:id" element = {<ArticleComponent />}></Route>
 	  <Route exact path = "/SpaceHome" element = {<SpaceHome />}></Route>
+	  <Route exact path = "/GRTG" element = {<Rules />}></Route>
 	  {createArticleRoutes()}
     </Routes>
   );

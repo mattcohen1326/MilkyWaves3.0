@@ -33,7 +33,7 @@ function Nav(){
 		<div className = "nav">
 			<NavItem name="Home" navigation="/StartPage"/>
 			<NavItem name="Playlists" navigation = "/Playlists"/>
-			<NavItem name="GRBTTG" navigation = "/Genre"/>
+			<NavItem name="GRBTTG" navigation = "/GRTG"/>
 			<NavItem name="Album of the Week" navigation = "/AOTW"/>
 		
 		</div>
