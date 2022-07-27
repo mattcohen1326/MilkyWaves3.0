@@ -10,6 +10,12 @@
   height: 40vmin;
   pointer-events: none;
 }
+#board{
+  width:500px;
+  height:400px;
+  background-color: white;
+  z-index: 0;
+}
 
 #ruleEntry{
   opacity: 0%;
@@ -91,7 +97,10 @@ body{
   display: flex;
   justify-content: space-around;
 }
-
+#gamecontrols{
+  margin-top:60vh;
+  display: flex;
+}
 #RulesPage{
   color:white;
   margin-top:10vh;

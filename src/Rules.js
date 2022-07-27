@@ -19,12 +19,21 @@ class Rule extends React.Component{
         this.setState({hovered:false})
     }
     render(){
-        const myStyle = {animationName:"fadein",
-        animationFillMode:"forwards",
-        animationDuration:"2s",
-        animationDelay:"1s"}
-        if(this.hovered){
-            
+        
+        const myStyle = {}
+        if(this.state.hovered){
+            const myStyle = {animationName:"fadein",
+            animationFillMode:"forwards",
+            animationDuration:"2s",
+            animationDelay:"1s",
+            opacity:"1"}
+            console.log("ok")
+        }
+        else{
+            const myStyle = {animationName:"bodyfade",
+            animationFillMode:"forwards",
+            animationDuration:"4s",
+            animationTimingFunction:"linear"}
         }
         return(
             <>

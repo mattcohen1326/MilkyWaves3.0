@@ -16,6 +16,7 @@ import SpaceWarp from "./space.js";
 import ArticleComponent from './ArticleComponent';
 import articles from './articles/articles.json'
 import articleImages from './articles/articleGenerator';
+import Game from './game.js'
 
 function createArticleRoutes(){
 	var aroutes = []
@@ -40,6 +41,7 @@ const Main = () => {
 	  <Route exact path = "/SpaceWarp" element = {<SpaceWarp />}></Route>
 	  <Route exact path = "/SpaceHome" element = {<SpaceHome />}></Route>
 	  <Route exact path = "/GRTG" element = {<Rules />}></Route>
+	  <Route exact path = "/Game" element = {<Game />}></Route>
 	  {createArticleRoutes()}
     </Routes>
   );
