@@ -17,9 +17,27 @@
   z-index: 0;
 }
 
-#ruleEntry{
-  opacity: 0%;
+#RulesPage{
+  width:100vw;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  flex-wrap:wrap;
 }
+
+.ruleEntry{
+  width:75vw;
+  display: flex;
+}
+
+.rule-body{
+  
+  color:#5edfe0;
+}
+.rule-number{
+  color:  rgb(208,121,191);
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

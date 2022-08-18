@@ -19,25 +19,11 @@ class Rule extends React.Component{
         this.setState({hovered:false})
     }
     render(){
-        
-        const myStyle = {}
-        if(this.state.hovered){
-            const myStyle = {animationName:"fadein",
-            animationFillMode:"forwards",
-            animationDuration:"2s",
-            animationDelay:"1s",
-            opacity:"1"}
-            console.log("ok")
-        }
-        else{
-            const myStyle = {animationName:"bodyfade",
-            animationFillMode:"forwards",
-            animationDuration:"4s",
-            animationTimingFunction:"linear"}
-        }
         return(
             <>
-                <h1 onMouseOver={this.handleHover} style={myStyle} onMouseOut={this.state.handleUnhover} id = "ruleEntry">RULE #{this.props.number}: {this.props.body}</h1>
+                <div className="ruleEntry">
+                    <h1 className = "rule-number">{this.props.number}:</h1><h1 onMouseOver={this.handleHover} onMouseOut={this.state.handleUnhover} className = "rule-body">{this.props.body}</h1>
+                </div>
             </>
         )
         }
@@ -68,7 +54,7 @@ class Rules extends React.Component{
                 <MediaQuery minWidth={1224} >
                 <Nav />
                 <div id = "RulesPage">
-                <h1>GRAHAM'S RULES TO THE GALAXY</h1>
+                <h1>GRAHAM'S GUIDE TO THE GALAXY</h1>
                 {loadRules()}
                 </div>
                 </MediaQuery> 
