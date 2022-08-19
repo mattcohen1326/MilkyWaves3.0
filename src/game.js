@@ -93,8 +93,7 @@ class Players extends React.Component{
         
         this.interval = setInterval(() => {
            
-            if((Math.abs(this.enemyx - this.playerx) < 5) && (Math.abs(this.enemyy - this.playery) < 5)){
-                console.log("GAME OVER - SCORE: ", this.score)
+            if((Math.abs(this.enemyx - this.playerx) < 4) || (Math.abs(this.enemyy - this.playery) < 4)){
                 this.setState({gameover:true})
                 clearInterval(this.interval)
             }
@@ -134,8 +133,8 @@ class Players extends React.Component{
         let ydifference = ymax - ymin;
         let xdifference = xmax - xmin;
         let rand = Math.random();
-        this.enemyx = Math.floor(Math.random() * xdifference)+34.5;
-        this.enemyy = Math.floor(Math.random() * ydifference)+25;
+        this.enemyx = Math.floor(Math.random() * xdifference)+xmin;
+        this.enemyy = Math.floor(Math.random() * ydifference)+ymin;
     }
     
     jump(event){
@@ -201,7 +200,6 @@ class Enemy extends React.Component{
         let rand = Math.random();
         this.xw = Math.floor(Math.random() * xdifference)+34.5;
         this.yh = Math.floor(Math.random() * ydifference)+25;
-        console.log(this.xw)
     }
 
     render() {

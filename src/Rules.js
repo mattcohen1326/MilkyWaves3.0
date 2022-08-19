@@ -62,7 +62,7 @@ class Rules extends React.Component{
                 <MenuButton content={(
                     <>
                     <div id = "RulesPage">
-                    <h1>GRAHAM'S RULES TO THE GALAXY</h1>
+                    <h1>GRAHAM'S GUIDE TO THE GALAXY</h1>
                     {loadRules()}
                     </div>
                     </>
